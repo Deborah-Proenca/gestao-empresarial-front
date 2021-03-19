@@ -1,20 +1,43 @@
 h2{
     color: black;   
+    margin-right: 2rem;
 }
 
 table{
     width: 100%;
 }
 
-.edit{
+.edit,.info{
     margin-right:.5rem;
+    
+}
+
+.material-icons{
+    color: black;
+
+}
+
+::ng-deep{
+
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-bar{
+        background-color: gray !important;
+    }
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+        background-color: #000  !important;
+    }
 }
 
 button{
     float: right;
-    margin-top: 1rem;
     margin-right: 1rem;
-    margin-bottom: 1rem;
+   
     background-color: rgb(146, 145, 145) !important;
 }
-    
+
+.titulo{
+    button,h2{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        display: inline-block;
+    }
+}

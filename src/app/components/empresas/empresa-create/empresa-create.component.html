@@ -19,12 +19,14 @@
             <mat-error>Quantidade obrigatória</mat-error>
         </mat-form-field>
     </form>
+    <div class="btn-form">
 
-    <button [disabled]="!empresa?.valid" mat-raised-button (click)="createEmpresa()" color="primary">
-        Salvar
-    </button>
-
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+        <button mat-raised-button (click)="cancel()" class="btn-cancelar">
+            Cancelar
+        </button>
+        <button [disabled]="!empresa?.valid" mat-raised-button (click)="createEmpresa()" color="primary"
+            class="btn-salvar">
+            Salvar
+        </button>
+    </div>
 </mat-card>

@@ -1,9 +1,8 @@
 <div class="mat-elevation-z8">
 
-    <div fxFlex="80">
+    <div class="titulo">
         <h2>Cadastro de empresas</h2>
-    </div>
-    <div fxFlex="20">
+
         <button mat-raised-button color="primary" (click)=navigateToEmpresaCreate()>
             Adicionar Empresa
         </button>
@@ -16,19 +15,22 @@
         </ng-container>
         <ng-container matColumnDef="razaoSocial">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Razão Social</th>
-            <td mat-cell *matCellDef="let row">{{row.name}}</td>
+            <td mat-cell *matCellDef="let row">{{row.razaoSocial }}</td>
         </ng-container>
         <ng-container matColumnDef="nomeFantasia">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome Fantasia</th>
-            <td mat-cell *matCellDef="let row">{{row.price | currency: 'BRL'}}</td>
+            <td mat-cell *matCellDef="let row">{{row.nomeFantasia }}</td>
         </ng-container>
         <ng-container matColumnDef="quantidadeFuncionarios">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Qtd. Funcionários</th>
-            <td mat-cell *matCellDef="let row">{{row.price | currency: 'BRL'}}</td>
+            <td mat-cell *matCellDef="let row">{{row.quantidadeFuncionario}}</td>
         </ng-container>
         <ng-container matColumnDef="acoes">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
             <td mat-cell *matCellDef="let row">
+                <a routerLink="/products/info/{{row.id}}" class="info">
+                    <i class="material-icons">info</i>
+                </a>
                 <a routerLink="/products/update/{{row.id}}" class="edit">
                     <i class="material-icons">edit</i>
                 </a>
@@ -39,7 +41,9 @@
         </ng-container>
         <ng-container matColumnDef="situacao">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Ativo</th>
-            <td mat-cell *matCellDef="let row">{{row.price | currency: 'BRL'}}</td>
+            <td mat-cell *matCellDef="let row">
+                <mat-slide-toggle [checked]="row.situacao"></mat-slide-toggle>
+            </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>

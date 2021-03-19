@@ -23,7 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 
 
@@ -45,7 +45,6 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule,
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -55,8 +54,8 @@ import { MatInputModule } from '@angular/material/input';
     MatSnackBarModule,
     HttpClientModule,
     MatListModule,
-    MatListModule,
-    MatInputModule 
+    MatInputModule,
+    MatSlideToggleModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
