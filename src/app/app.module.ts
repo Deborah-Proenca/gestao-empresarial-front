@@ -3,14 +3,60 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/templates/header/header.component';
+import { FooterComponent } from './components/templates/footer/footer.component';
+import { NavComponent } from './components/templates/nav/nav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule }  from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { EmpresasComponent } from './components/empresas/empresas.component';
+import { EmpresaCreateComponent } from './components/empresas/empresa-create/empresa-create.component';
+import { EmpresaDeleteComponent } from './components/empresas/empresa-delete/empresa-delete.component';
+import { EmpresaUpdateComponent } from './components/empresas/empresa-update/empresa-update.component';
+import { EmpresaReadComponent } from './components/empresas/empresa-read/empresa-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    EmpresasComponent,
+    EmpresaCreateComponent,
+    EmpresaDeleteComponent,
+    EmpresaUpdateComponent,
+    EmpresaReadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    MatListModule,
+    MatListModule,
+    MatInputModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

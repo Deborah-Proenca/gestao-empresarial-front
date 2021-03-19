@@ -1,0 +1,30 @@
+<!-- nome de cada input -->
+
+<mat-card>
+    <mat-card-title>
+        Nova Empresa
+    </mat-card-title>
+    <form [formGroup]="empresa">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Razão Social" formControlName="razaoSocial">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome Fantasia" formControlName="nomeFantasia">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Quantidade de Funcionários"
+                formControlName="quantidadeFuncionario">
+            <mat-error>Quantidade obrigatória</mat-error>
+        </mat-form-field>
+    </form>
+
+    <button [disabled]="!empresa?.valid" mat-raised-button (click)="createEmpresa()" color="primary">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

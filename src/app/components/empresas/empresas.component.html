@@ -1,0 +1,47 @@
+<div class="mat-elevation-z8">
+
+    <div fxFlex="80">
+        <h2>Cadastro de empresas</h2>
+    </div>
+    <div fxFlex="20">
+        <button mat-raised-button color="primary" (click)=navigateToEmpresaCreate()>
+            Adicionar Empresa
+        </button>
+    </div>
+
+    <table mat-table [dataSource]="empresas">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="razaoSocial">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Razão Social</th>
+            <td mat-cell *matCellDef="let row">{{row.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nomeFantasia">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome Fantasia</th>
+            <td mat-cell *matCellDef="let row">{{row.price | currency: 'BRL'}}</td>
+        </ng-container>
+        <ng-container matColumnDef="quantidadeFuncionarios">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Qtd. Funcionários</th>
+            <td mat-cell *matCellDef="let row">{{row.price | currency: 'BRL'}}</td>
+        </ng-container>
+        <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+            <td mat-cell *matCellDef="let row">
+                <a routerLink="/products/update/{{row.id}}" class="edit">
+                    <i class="material-icons">edit</i>
+                </a>
+                <a routerLink="/products/delete/{{row.id}}" class="delete">
+                    <i class="material-icons">delete</i>
+                </a>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="situacao">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ativo</th>
+            <td mat-cell *matCellDef="let row">{{row.price | currency: 'BRL'}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+</div>
