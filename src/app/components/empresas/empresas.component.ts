@@ -30,7 +30,15 @@ export class EmpresasComponent implements OnInit {
 
   delete(id: number) {
     this.empresaService.delete(id).subscribe(
-      data => console.log(data)
+      data => {
+        this.empresaService.showMessage('Empresa excluída com Sucesso')
+        this.empresaService.read().subscribe(
+          empresa =>  {
+            this.empresas = empresa
+          }
+          )
+      }
     );
+    this.router.navigate(['/empresas'])
   }
 }

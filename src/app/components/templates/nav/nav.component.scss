@@ -1,10 +1,16 @@
-
+.sidenav{
+    background-color: #f5f5f5;
+    width: 200px;
+    
+    
+}
 .sidenav a{
-    font-weight:800;
+    font-weight:500;
+    color: black;
 }
 
 .content{
     background-color: #f5f5f5;
     color: rgb(255, 255, 255);
-    padding: 1rem;
+    
 }

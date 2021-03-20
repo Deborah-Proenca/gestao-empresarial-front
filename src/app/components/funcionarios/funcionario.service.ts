@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Empresa } from './empresa.interface';
+import { Funcionario } from './funcionario.interface';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
@@ -8,9 +8,9 @@ import { catchError, map } from 'rxjs/operators'
 @Injectable({
   providedIn: 'root'
 })
-export class EmpresaService {
+export class FuncionarioService {
   
-  baseUrl = "http://localhost:8080/"
+  baseUrl = "http://localhost:8080/funcionarios/"
 
   constructor(
     private snackBar: MatSnackBar,
@@ -26,8 +26,8 @@ export class EmpresaService {
     })
   }
 
-  create(empresa: Empresa): Observable<Empresa>{
-    return this.http.post<Empresa>(this.baseUrl + "/empresas",empresa).pipe(
+  create(funcionario: Funcionario): Observable<Funcionario>{
+    return this.http.post<Funcionario>(this.baseUrl,funcionario).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
@@ -38,25 +38,24 @@ export class EmpresaService {
     return EMPTY
   }
 
-  read(): Observable<Empresa[]>{
-    return this.http.get<Empresa[]>(this.baseUrl + "empresas/recuperar-todos")
+  read(): Observable<Funcionario[]>{
+    return this.http.get<Funcionario[]>(this.baseUrl)
   }
 
   readById(id: string){
     const url = `${this.baseUrl}/${id}`
-    return this.http.get<Empresa>(url)
+    return this.http.get<Funcionario>(url)
   }
 
-  update(empresa: Empresa): Observable<Empresa>{
-    const url = `${this.baseUrl}/${empresa.id}`
-    return this.http.put<Empresa>(url,empresa)
+  update(funcionario: Funcionario): Observable<Funcionario>{
+    const url = `${this.baseUrl}/${funcionario.id}`
+    return this.http.put<Funcionario>(url,funcionario)
   }
 
-  delete(id: number): Observable<Empresa>{
-    const url = `${this.baseUrl+"/empresas"}/${id}`
-    return this.http.delete<Empresa>(url)
+  delete(id: number): Observable<Funcionario>{
+    const url = `${this.baseUrl}/${id}`
+    return this.http.delete<Funcionario>(url)
   }
-
 }
 
 

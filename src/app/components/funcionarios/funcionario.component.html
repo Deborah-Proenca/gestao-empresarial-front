@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+
+    <div class="titulo">
+        <h2>Cadastro de Funcionários</h2>
+
+        <button mat-raised-button color="primary" (click)=navigateToFuncionarioCreate()>
+            Adicionar Funcinário
+        </button>
+    </div>
+
+    <table mat-table [dataSource]="funcionario">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nomeCompleto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome Completo</th>
+            <td mat-cell *matCellDef="let row">{{row.nomeCompleto }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CPF</th>
+            <td mat-cell *matCellDef="let row">{{row.cpf }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cargo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cargo</th>
+            <td mat-cell *matCellDef="let row">{{row.cargo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+            <td mat-cell *matCellDef="let row">
+                <a class="info">
+                    <i class="material-icons">info</i>
+                </a>
+                <a class="edit">
+                    <i class="material-icons">edit</i>
+                </a>
+                <a routerLink="/funcionario" (click)="delete(row.id)"  class="delete">
+                    <i class="material-icons">delete</i>
+                </a>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+</div>

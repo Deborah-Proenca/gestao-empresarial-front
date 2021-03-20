@@ -1,7 +1,7 @@
 <div class="mat-elevation-z8">
 
     <div class="titulo">
-        <h2>Cadastro de empresas</h2>
+        <h2>Cadastro de Empresas</h2>
 
         <button mat-raised-button color="primary" (click)=navigateToEmpresaCreate()>
             Adicionar Empresa
@@ -34,7 +34,7 @@
                 <a routerLink="/products/update/{{row.id}}" class="edit">
                     <i class="material-icons">edit</i>
                 </a>
-                <a  routerLink="/products/delete/{{row.id}}" (click)="delete(row.id)"  class="delete">
+                <a  routerLink="/empresa" (click)="delete(row.id)"  class="delete">
                     <i class="material-icons">delete</i>
                 </a>
             </td>

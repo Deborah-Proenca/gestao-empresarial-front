@@ -1,0 +1,32 @@
+<!-- nome de cada input -->
+
+<mat-card>
+    <mat-card-title>
+        Nova funcionário
+    </mat-card-title>
+    <form [formGroup]="funcionario">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome Completo" formControlName="nomeCompleto">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="CPF" formControlName="cpf">
+            <mat-error>Cpf obrigatório</mat-error>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Cargo" formControlName="cargo">
+            <mat-error>Cargo obrigatório</mat-error>
+        </mat-form-field>
+    </form>
+    <div class="btn-form">
+
+        <button mat-raised-button (click)="cancel()" class="btn-cancelar">
+            Cancelar
+        </button>
+        <button mat-raised-button color="primary" (click)="createFuncionario()"
+            class="btn-salvar">
+            Salvar
+        </button>
+    </div>
+</mat-card>

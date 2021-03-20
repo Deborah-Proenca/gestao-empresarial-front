@@ -24,6 +24,11 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { FuncionarioComponent } from './components/funcionarios/funcionario.component';
+import { FuncionarioDeleteComponent } from './components/funcionarios/funcionario-delete/funcionario-delete.component';
+import { FuncionarioCreateComponent } from './components/funcionarios/funcionario-create/funcionario-create.component';
+import { FuncionarioReadComponent } from './components/funcionarios/funcionario-read/funcionario-read.component';
+import { FuncionarioUpdateComponent } from './components/funcionarios/funcionario-update/empresa-update.component';
 
 
 
@@ -37,7 +42,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
     EmpresaCreateComponent,
     EmpresaDeleteComponent,
     EmpresaUpdateComponent,
-    EmpresaReadComponent
+    EmpresaReadComponent,
+    FuncionarioComponent,
+    FuncionarioCreateComponent,
+    FuncionarioDeleteComponent,
+    FuncionarioUpdateComponent,
+    FuncionarioReadComponent
   ],
   imports: [
     BrowserModule,
