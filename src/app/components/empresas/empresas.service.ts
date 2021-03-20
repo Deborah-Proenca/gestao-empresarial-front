@@ -27,7 +27,7 @@ export class EmpresaService {
   }
 
   create(empresa: Empresa): Observable<Empresa>{
-    return this.http.post<Empresa>(this.baseUrl,empresa).pipe(
+    return this.http.post<Empresa>(this.baseUrl + "/empresas",empresa).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
@@ -39,7 +39,7 @@ export class EmpresaService {
   }
 
   read(): Observable<Empresa[]>{
-    return this.http.get<Empresa[]>(this.baseUrl)
+    return this.http.get<Empresa[]>(this.baseUrl + "empresas/recuperar-todos")
   }
 
   readById(id: string){
@@ -52,8 +52,8 @@ export class EmpresaService {
     return this.http.put<Empresa>(url,empresa)
   }
 
-  delete(id: string): Observable<Empresa>{
-    const url = `${this.baseUrl}/${id}`
+  delete(id: number): Observable<Empresa>{
+    const url = `${this.baseUrl+"/empresas"}/${id}`
     return this.http.delete<Empresa>(url)
   }
 
