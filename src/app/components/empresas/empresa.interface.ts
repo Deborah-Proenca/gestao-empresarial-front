@@ -1,3 +1,5 @@
+import { Funcionario } from "../funcionarios/funcionario.interface";
+
 export interface Empresa{
 
     id?: number;
@@ -5,4 +7,5 @@ export interface Empresa{
     nomeFantasia: string;
     quantidadeFuncionario: number;
     situacao: boolean;
+    funcionarios: Funcionario[]
 }

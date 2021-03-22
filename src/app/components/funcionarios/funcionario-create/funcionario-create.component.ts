@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Empresa } from '../../empresas/empresa.interface';
+import { EmpresaService } from '../../empresas/empresas.service';
 import { FuncionarioService } from '../funcionario.service';
 
 @Component({
@@ -13,11 +15,13 @@ export class FuncionarioCreateComponent implements OnInit {
 
   
   funcionario!: FormGroup;
+  empresa: Empresa[] = []
 
   constructor(
     private funcionarioService: FuncionarioService,
     private router: Router,
     private formBuilder: FormBuilder,
+    private empresaService: EmpresaService
   ) { }
 
   get nomeCompleto() {
@@ -45,6 +49,10 @@ export class FuncionarioCreateComponent implements OnInit {
       cpf:['', Validators.required],
       nomeCompleto:['',Validators.required],
       cargo:['',Validators.required],
+      empresa:[]
+    })
+    this.empresaService.read().subscribe(empresas => {
+      this.empresa = empresas
     })
   }
 
@@ -53,7 +61,6 @@ export class FuncionarioCreateComponent implements OnInit {
   }
 
   createFuncionario(): void{
-    console.log(this.funcionario)
     this.funcionarioService.create(this.funcionario?.value).subscribe( () => {
       this.funcionarioService.showMessage('Funcionario Cadastrada com Sucesso')
       this.router.navigate(['/funcionario'])

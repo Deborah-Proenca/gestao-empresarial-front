@@ -42,13 +42,13 @@ export class EmpresaService {
     return this.http.get<Empresa[]>(this.baseUrl + "empresas/recuperar-todos")
   }
 
-  readById(id: string){
-    const url = `${this.baseUrl}/${id}`
+  readById(id: number){
+    const url = `${this.baseUrl}/empresas/${id}`
     return this.http.get<Empresa>(url)
   }
 
   update(empresa: Empresa): Observable<Empresa>{
-    const url = `${this.baseUrl}/${empresa.id}`
+    const url = `${this.baseUrl}/empresas/${empresa.id}`
     return this.http.put<Empresa>(url,empresa)
   }
 
@@ -56,6 +56,8 @@ export class EmpresaService {
     const url = `${this.baseUrl+"/empresas"}/${id}`
     return this.http.delete<Empresa>(url)
   }
+
+  
 
 }
 

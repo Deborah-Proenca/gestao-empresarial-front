@@ -1,1 +1,30 @@
-<p>empresa-update works!</p>
+<mat-card>
+    <mat-card-title>
+        Editar Empresa
+    </mat-card-title>
+    <form [formGroup]="empresaForm">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Razão Social" formControlName="razaoSocial">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome Fantasia" formControlName="nomeFantasia">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Quantidade de Funcionários"
+                formControlName="quantidadeFuncionario">
+            <mat-error>Quantidade obrigatória</mat-error>
+        </mat-form-field>
+    </form>
+    <div class="btn-form">
+
+        <button mat-raised-button (click)="cancel()" class="btn-cancelar">
+            Cancelar
+        </button>
+        <button [disabled]="!empresaForm?.valid" mat-raised-button (click)="updateEmpresa()" color="primary"
+            class="btn-salvar">
+            Salvar
+        </button>
+    </div>
+</mat-card>

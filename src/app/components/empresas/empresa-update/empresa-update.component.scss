@@ -1,0 +1,23 @@
+button{
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-form{
+    text-align: right;
+    .btn-salvar{
+        background-color: green;
+        color: #fff;
+        width: 100px;
+    }
+    .btn-cancelar{
+        background-color: gray;
+        color: #fff;
+        width: 100px;
+    }
+}

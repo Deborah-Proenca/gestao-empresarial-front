@@ -2,7 +2,7 @@
 
 <mat-card>
     <mat-card-title>
-        Nova funcionário
+        Novo Funcionário
     </mat-card-title>
     <form [formGroup]="funcionario">
         <mat-form-field>
@@ -18,6 +18,14 @@
             <input type="text" matInput placeholder="Cargo" formControlName="cargo">
             <mat-error>Cargo obrigatório</mat-error>
         </mat-form-field>
+
+        <mat-form-field >
+            <mat-label>Empresa</mat-label>
+            <mat-select formControlName="empresa">
+              <mat-option *ngFor="let emp of empresa" [value]="emp">{{emp.razaoSocial}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
     </form>
     <div class="btn-form">
 

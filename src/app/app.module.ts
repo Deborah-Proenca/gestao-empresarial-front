@@ -28,7 +28,8 @@ import { FuncionarioComponent } from './components/funcionarios/funcionario.comp
 import { FuncionarioDeleteComponent } from './components/funcionarios/funcionario-delete/funcionario-delete.component';
 import { FuncionarioCreateComponent } from './components/funcionarios/funcionario-create/funcionario-create.component';
 import { FuncionarioReadComponent } from './components/funcionarios/funcionario-read/funcionario-read.component';
-import { FuncionarioUpdateComponent } from './components/funcionarios/funcionario-update/empresa-update.component';
+import { FuncionarioUpdateComponent } from './components/funcionarios/funcionario-update/funcionario-update.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -58,6 +59,7 @@ import { FuncionarioUpdateComponent } from './components/funcionarios/funcionari
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,

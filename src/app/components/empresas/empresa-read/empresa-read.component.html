@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-title>
+       Visualizar Empresa
+    </mat-card-title>
+    <form [formGroup]="empresaForm">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Razão Social" formControlName="razaoSocial">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome Fantasia" formControlName="nomeFantasia">
+            <mat-error>Nome obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Quantidade de Funcionários"
+                formControlName="quantidadeFuncionario">
+            <mat-error>Quantidade obrigatória</mat-error>
+        </mat-form-field>
+    </form>
+    <div class="btn-form">
+
+        <button mat-raised-button (click)="cancel()" class="btn-cancelar">
+            Voltar
+        </button>
+        
+    </div>
+</mat-card>
+
+<mat-card>
+    <table mat-table [dataSource]="funcionario">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nomeCompleto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome Completo</th>
+            <td mat-cell *matCellDef="let row">{{row.nomeCompleto }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CPF</th>
+            <td mat-cell *matCellDef="let row">{{row.cpf }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cargo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cargo</th>
+            <td mat-cell *matCellDef="let row">{{row.cargo}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+</mat-card>

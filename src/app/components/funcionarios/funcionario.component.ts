@@ -12,12 +12,6 @@ import { FuncionarioService } from './funcionario.service';
 export class FuncionarioComponent implements OnInit {
 
   funcionario: Funcionario[] = [
-    {
-      nomeCompleto:"Marcelo",
-      cpf :"10464585902",
-      cargo:"Coordenador",
-      id:1
-    }
   ];
   columnsToDisplay = ['id','nomeCompleto','cpf', 'cargo','acoes']
   constructor(private funcionarioService: FuncionarioService, private router: Router) { }
